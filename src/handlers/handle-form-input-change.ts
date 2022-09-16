@@ -16,13 +16,13 @@ export type Action =
 export const handleFormInputChange = (state: Data, action: Action) => {
   switch (action.type) {
     case "UPDATE_FIRST_NAME":
-      return { ...state, firstName: action.value };
+      return { ...state, firstName: action.value, submitted: false };
     case "UPDATE_LAST_NAME":
-      return { ...state, lastName: action.value };
+      return { ...state, lastName: action.value, submitted: false };
     case "UPDATE_EMAIL":
-      return { ...state, email: action.value };
+      return { ...state, email: action.value, submitted: false };
     case "UPDATE_PHONE":
-      return { ...state, phone: action.value };
+      return { ...state, phone: action.value, submitted: false };
     case "SUBMIT_FORM":
       return { ...state, submitted: true };
     default:
