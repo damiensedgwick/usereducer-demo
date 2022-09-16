@@ -3,6 +3,7 @@ export type Data = {
   lastName: string;
   email: string;
   phone: string;
+  submitted: boolean;
 }
 
 export type Action =
@@ -10,6 +11,7 @@ export type Action =
   | { type: "UPDATE_LAST_NAME", value: string }
   | { type: "UPDATE_EMAIL", value: string }
   | { type: "UPDATE_PHONE", value: string }
+  | { type: "SUBMIT_FORM" }
 
 export const handleFormInputChange = (state: Data, action: Action) => {
   switch (action.type) {
@@ -21,6 +23,8 @@ export const handleFormInputChange = (state: Data, action: Action) => {
       return { ...state, email: action.value };
     case "UPDATE_PHONE":
       return { ...state, phone: action.value };
+    case "SUBMIT_FORM":
+      return { ...state, submitted: true };
     default:
       throw new Error("Unhandled form input action");
   }
