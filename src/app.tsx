@@ -31,8 +31,10 @@ export const App = () => {
                    onChange={(e) => dispatch({ type: "UPDATE_FIRST_NAME", value: e.target.value })} />
             <Input placeholder="Last Name" value={state.lastName}
                    onChange={(e) => dispatch({ type: "UPDATE_LAST_NAME", value: e.target.value })} />
-            <Input placeholder="Email" value={state.email} onChange={(e) => dispatch({ type: "UPDATE_EMAIL", value: e.target.value })} />
-            <Input placeholder="Phone" value={state.phone} onChange={(e) => dispatch({ type: "UPDATE_PHONE", value: e.target.value })} />
+            <Input placeholder="Email" value={state.email}
+                   onChange={(e) => dispatch({ type: "UPDATE_EMAIL", value: e.target.value })} />
+            <Input placeholder="Phone" value={state.phone}
+                   onChange={(e) => dispatch({ type: "UPDATE_PHONE", value: e.target.value })} />
           </FormGroup>
           <Button type="button"
                   onClick={() => state.submitted ? dispatch({ type: "RESET_FORM" }) : dispatch({ type: "SUBMIT_FORM" })}>{state.submitted ? "RESET" : "SAVE"}</Button>
@@ -46,7 +48,5 @@ export const App = () => {
         </SubmissionDetails>
       ) : null}
     </Container>
-
-
   );
 };
